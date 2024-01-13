@@ -1,7 +1,76 @@
+html * {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
   background-color: #22272E;
-  color: #ADBAC7;
-  font-family: sans-serif;
+  color: #E5E5E5;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr 60px;
+}
+
+#games .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 26.25vw;
+}
+#games .container .game {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+#games .container .game::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: linear-gradient(180deg, rgba(34, 39, 46, 0) 0%, rgba(34, 39, 46, 0.72) 79.5%, #22272E 100%);
+  opacity: 1;
+  transition: opacity 0.24s ease-in;
+}
+#games .container .game:first-child {
+  background-color: #D7D7D9;
+}
+#games .container .game:nth-child(2) {
+  background-color: #A3B4C2;
+}
+#games .container .game:hover::after {
+  opacity: 0;
+}
+
+#about .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 18px 56px 8px;
+  padding-right: 25%;
+}
+#about .container h1, #about .container p {
+  margin: 0;
+}
+#about .container h1 + p {
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+footer .container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 18px;
+  padding: 8px 56px 18px;
+}
+footer .container a {
+  display: flex;
 }
 
 /*# sourceMappingURL=styles.css.map */
