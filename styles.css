@@ -4,9 +4,32 @@ html * {
 
 body {
   margin: 0;
-  background-color: #22272E;
+  background-color: rgb(34, 39, 46);
   color: #E5E5E5;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.button {
+  display: inline-block;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  text-decoration: none;
+  color: #E5E5E5;
+  background-color: #1C9D1F;
+  transition: background-color 0.12s ease-in-out;
+}
+.button:hover, .button:focus {
+  background-color: #43B146;
 }
 
 .content {
@@ -25,25 +48,39 @@ body {
   height: 100%;
   position: relative;
   cursor: pointer;
+  background-size: cover;
+  background-position: center;
 }
-#games .container .game::after {
-  content: "";
-  position: absolute;
+#games .container .game .overlay {
   width: 100%;
   height: 100%;
-  display: block;
   background: linear-gradient(180deg, rgba(34, 39, 46, 0) 0%, rgba(34, 39, 46, 0.72) 79.5%, #22272E 100%);
-  opacity: 1;
-  transition: opacity 0.24s ease-in;
 }
-#games .container .game:first-child {
-  background-color: #D7D7D9;
-}
-#games .container .game:nth-child(2) {
-  background-color: #A3B4C2;
-}
-#games .container .game:hover::after {
+#games .container .game-description {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(34, 39, 46, 0.9);
+  padding: 56px;
   opacity: 0;
+  transition: opacity 0.32s ease-in-out;
+}
+#games .container .game-description p {
+  margin: 0;
+  max-width: 80%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+#games .container .game:hover .game-description, #games .container .game:focus .game-description, #games .container .game:focus-within .game-description {
+  opacity: 1;
+}
+#games .container .game:hover .game-description p, #games .container .game:focus .game-description p, #games .container .game:focus-within .game-description p {
+  animation-name: fadeInUp;
+  animation-duration: 0.6s;
+  opacity: 1;
+}
+#games .container .game:hover .game-description a, #games .container .game:focus .game-description a, #games .container .game:focus-within .game-description a {
+  animation-name: fadeInUp;
+  animation-duration: 0.64s;
 }
 
 #about .container {
@@ -71,6 +108,17 @@ footer .container {
 }
 footer .container a {
   display: flex;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
