@@ -39,11 +39,18 @@ body {
   overflow-x: hidden;
 }
 
-#games .inner-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 26.25vw;
-  max-height: 422px;
+@media (min-width: 576px) {
+  #games .inner-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 26.25vw;
+    max-height: 422px;
+  }
+}
+@media (max-width: 767.98px) {
+  #games .inner-container {
+    min-height: 200px;
+  }
 }
 #games .inner-container .game {
   width: 100%;
@@ -51,6 +58,11 @@ body {
   cursor: pointer;
   background-size: cover;
   background-position: center;
+}
+@media (max-width: 575.98px) {
+  #games .inner-container .game {
+    aspect-ratio: 16/7;
+  }
 }
 #games .inner-container .game::after {
   content: "";
@@ -115,6 +127,11 @@ body {
   margin: 0;
   color: #22272E;
 }
+@media (max-width: 575.98px) {
+  #games .inner-container .game-description .text {
+    padding-inline: 42px;
+  }
+}
 
 #about .inner-container {
   height: 100%;
@@ -126,6 +143,16 @@ body {
 @media (min-width: 768px) {
   #about .inner-container {
     padding-right: 25%;
+  }
+}
+@media (max-width: 767.98px) {
+  #about .inner-container {
+    padding-inline: 42px;
+  }
+}
+@media (max-width: 575.98px) {
+  #about .inner-container {
+    padding-inline: 28px;
   }
 }
 #about .inner-container h1, #about .inner-container p {
@@ -148,6 +175,16 @@ footer .inner-container {
 }
 footer .inner-container a {
   display: flex;
+}
+@media (max-width: 767.98px) {
+  footer .inner-container {
+    padding-right: 42px;
+  }
+}
+@media (max-width: 575.98px) {
+  footer .inner-container {
+    padding-right: 28px;
+  }
 }
 
 @keyframes fadeInUp {
