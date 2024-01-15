@@ -14,30 +14,38 @@
         
         <section id="games">
             <div class="container">
-                <div class="game" tabindex="0" style="background-image: url('/gamedev/images/taptapco2.png');">
-                    <div class="overlay">
+                <div class="game" tabindex="0" style="background-image: url('/images/taptapco2.png');" data-component-toggle="modal" data-modal-target="modal-1">
+                    <div class="modal closed" id="modal-1">                        
                         <div class="game-description">
-                            <p>
-                                <b>TapTap CO2!</b> is a casual mobile game that challanges you to make better individual day-to-day choices 
-                                in order to help mitigate global warming.
+                            <div class="banner" style="background-image: url('/images/taptapco2.png');">
+                                <!-- <button class="modal-close-button" title="Close" data-modal-target="modal-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512">
+                                        <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+                                    </svg>
+                                </button> -->
+                            </div>
+                            <div class="text">
+                                <p>
+                                    <b>TapTap CO2!</b> is a casual mobile game that challanges you to make better individual day-to-day choices 
+                                    in order to help mitigate global warming.
+                                    <br/>
+                                    
                                 <br/>
-                                
-                            <br/>
-                                Developed with <b>Unity</b> for <b>Android</b> devices.
-                            </p>
-                            <br/>
-                            <a class="button" href="/gamedev/games/TapTapCO2_v1-1.apk">DOWNLOAD APK</a>
+                                    Developed with <b>Unity</b> for <b>Android</b> devices.
+                                </p>
+                                <br/>
+                                <a class="button" href="/gamedev/games/TapTapCO2_v1-1.apk">DOWNLOAD APK</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="game" tabindex="0" style="background-image: url('/gamedev/images/coming-soon.png');">
-                    <div class="overlay">
-                        <div class="game-description">
+                <div class="game" tabindex="0" style="background-image: url('/images/coming-soon.png');">
+                        <!-- <div class="game-description">
                             <p>
                                 More projects coming soon!
                             </p>
-                        </div>
-                    </div>
+                        </div> -->
+                    <!-- </div> -->
                 </div>
             </div>
         </section>
@@ -75,5 +83,56 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            let currentlyOpenModal = null;
+
+            document.querySelectorAll('[data-component-toggle="modal"').forEach(toggler => {
+                toggler.addEventListener('click', openModal);
+            });
+
+            document.querySelectorAll('.modal-close-button').forEach(toggler => {
+                toggler.addEventListener('click', openModal);
+            });
+
+            function openModal(event) {
+
+                const targetModalRef = event.target.dataset.modalTarget;
+
+                if (currentlyOpenModal || !targetModalRef) {
+                    return;
+                }
+
+                const targetModalEl = document.getElementById(targetModalRef);
+
+                targetModalEl.classList.remove('closed');
+                targetModalEl.classList.add('open');
+
+                currentlyOpenModal = targetModalEl;    
+
+                currentlyOpenModal.addEventListener('click', closeModal);
+
+            }
+
+            function closeModal(event) {
+
+                if (!currentlyOpenModal) {
+                    return;
+                }
+
+                if (currentlyOpenModal === event.target) {
+                    
+                    currentlyOpenModal .classList.remove('open');
+                    currentlyOpenModal .classList.add('closed');
+
+                    currentlyOpenModal.removeEventListener('click', closeModal);
+
+                    currentlyOpenModal = null;
+                }
+            }
+        });
+    </script>
 </body>
 </html>
