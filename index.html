@@ -7,51 +7,49 @@
     <meta name="theme-color" content="#22272E">
     <title>Juliana Gil | Game dev</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
     <div class="content">
         
         <section id="games">
-            <div class="container">
-                <div class="game" tabindex="0" style="background-image: url('/images/taptapco2.png');" data-component-toggle="modal" data-modal-target="modal-1">
-                    <div class="modal closed" id="modal-1">                        
-                        <div class="game-description">
-                            <div class="banner" style="background-image: url('/images/taptapco2.png');">
-                                <!-- <button class="modal-close-button" title="Close" data-modal-target="modal-1">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" viewBox="0 0 384 512">
-                                        <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
-                                    </svg>
-                                </button> -->
-                            </div>
-                            <div class="text">
-                                <p>
-                                    <b>TapTap CO2!</b> is a casual mobile game that challanges you to make better individual day-to-day choices 
-                                    in order to help mitigate global warming.
+            <div class="inner-container">
+                <div class="game" tabindex="0" style="background-image: url('/gamedev/images/taptapco2.png');" data-bs-toggle="modal" data-bs-target="#modal-1">
+                    <div class="modal fade" id="modal-1" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content game-description">
+                                <div class="banner" style="background-image: url('/images/taptapco2.png');">
+                                    <button class="modal-close-button" title="Close" data-modal-target="modal-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                                            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="text">
+                                    <p>
+                                        <b>TapTap CO2!</b> is a casual mobile game that challanges you to make better individual day-to-day choices 
+                                        in order to help mitigate global warming.
+                                        <br/>
+                                        
                                     <br/>
-                                    
-                                <br/>
-                                    Developed with <b>Unity</b> for <b>Android</b> devices.
-                                </p>
-                                <br/>
-                                <a class="button" href="/gamedev/games/TapTapCO2_v1-1.apk">DOWNLOAD APK</a>
+                                        Developed with <b>Unity</b> for <b>Android</b> devices.
+                                    </p>
+                                    <br/>
+                                    <a class="button" href="/gamedev/games/TapTapCO2_v1-1.apk">DOWNLOAD APK</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="game" tabindex="0" style="background-image: url('/images/coming-soon.png');">
-                        <!-- <div class="game-description">
-                            <p>
-                                More projects coming soon!
-                            </p>
-                        </div> -->
-                    <!-- </div> -->
+                <div class="game" tabindex="0" style="background-image: url('/gamedev/images/coming-soon-text.png');">
                 </div>
             </div>
         </section>
 
         <section id="about">
-            <div class="container">
+            <div class="inner-container">
                 <h1>Hello!&nbsp;👋</h1>
                 <!-- <p>
                     Dolor sit amet, consectetur adipiscing elit. Phasellus auctor varius dignissim. 
@@ -69,7 +67,7 @@
         </section>
 
         <footer>
-            <div class="container">
+            <div class="inner-container">
                 <a href="https://github.com/julianabmgil/" title="GitHub">
                     <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.9531 0C5.18066 0 0 5.1416 0 11.9141C0 17.3291 3.4082 21.9629 8.27637 23.5938C8.90137 23.7061 9.12109 23.3203 9.12109 23.0029C9.12109 22.7002 9.10645 21.0303 9.10645 20.0049C9.10645 20.0049 5.68848 20.7373 4.9707 18.5498C4.9707 18.5498 4.41406 17.1289 3.61328 16.7627C3.61328 16.7627 2.49512 15.9961 3.69141 16.0107C3.69141 16.0107 4.90723 16.1084 5.57617 17.2705C6.64551 19.1553 8.4375 18.6133 9.13574 18.291C9.24805 17.5098 9.56543 16.9678 9.91699 16.6455C7.1875 16.3428 4.43359 15.9473 4.43359 11.25C4.43359 9.90723 4.80469 9.2334 5.58594 8.37402C5.45898 8.05664 5.04395 6.74805 5.71289 5.05859C6.7334 4.74121 9.08203 6.37695 9.08203 6.37695C10.0586 6.10352 11.1084 5.96191 12.1484 5.96191C13.1885 5.96191 14.2383 6.10352 15.2148 6.37695C15.2148 6.37695 17.5635 4.73633 18.584 5.05859C19.2529 6.75293 18.8379 8.05664 18.7109 8.37402C19.4922 9.23828 19.9707 9.91211 19.9707 11.25C19.9707 15.9619 17.0947 16.3379 14.3652 16.6455C14.8145 17.0312 15.1953 17.7637 15.1953 18.9111C15.1953 20.5566 15.1807 22.5928 15.1807 22.9932C15.1807 23.3105 15.4053 23.6963 16.0254 23.584C20.9082 21.9629 24.2188 17.3291 24.2188 11.9141C24.2188 5.1416 18.7256 0 11.9531 0Z" fill="#ADBAC7"/>
@@ -83,56 +81,6 @@
             </div>
         </footer>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-
-            let currentlyOpenModal = null;
-
-            document.querySelectorAll('[data-component-toggle="modal"').forEach(toggler => {
-                toggler.addEventListener('click', openModal);
-            });
-
-            document.querySelectorAll('.modal-close-button').forEach(toggler => {
-                toggler.addEventListener('click', openModal);
-            });
-
-            function openModal(event) {
-
-                const targetModalRef = event.target.dataset.modalTarget;
-
-                if (currentlyOpenModal || !targetModalRef) {
-                    return;
-                }
-
-                const targetModalEl = document.getElementById(targetModalRef);
-
-                targetModalEl.classList.remove('closed');
-                targetModalEl.classList.add('open');
-
-                currentlyOpenModal = targetModalEl;    
-
-                currentlyOpenModal.addEventListener('click', closeModal);
-
-            }
-
-            function closeModal(event) {
-
-                if (!currentlyOpenModal) {
-                    return;
-                }
-
-                if (currentlyOpenModal === event.target) {
-                    
-                    currentlyOpenModal .classList.remove('open');
-                    currentlyOpenModal .classList.add('closed');
-
-                    currentlyOpenModal.removeEventListener('click', closeModal);
-
-                    currentlyOpenModal = null;
-                }
-            }
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

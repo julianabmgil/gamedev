@@ -39,20 +39,20 @@ body {
   overflow-x: hidden;
 }
 
-#games .container {
+#games .inner-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 26.25vw;
   max-height: 422px;
 }
-#games .container .game {
+#games .inner-container .game {
   width: 100%;
   height: 100%;
   cursor: pointer;
   background-size: cover;
   background-position: center;
 }
-#games .container .game::after {
+#games .inner-container .game::after {
   content: "";
   display: block;
   width: 100%;
@@ -61,17 +61,19 @@ body {
   opacity: 1;
   transition: opacity 0.4s ease-in-out;
 }
-#games .container .game:hover::after, #games .container .game:focus::after {
+#games .inner-container .game:hover::after, #games .inner-container .game:focus::after {
   opacity: 0;
 }
-#games .container .game-description {
+#games .inner-container .game-description {
   max-width: 460px;
   min-height: 100%;
   margin: auto;
+  border-width: 0px;
   border-radius: 24px;
   background-color: rgb(220, 220, 220);
+  cursor: default;
 }
-#games .container .game-description .banner {
+#games .inner-container .game-description .banner {
   width: 100%;
   aspect-ratio: 16/6;
   background-size: cover;
@@ -81,7 +83,7 @@ body {
   position: relative;
   overflow: hidden;
 }
-#games .container .game-description .banner::after {
+#games .inner-container .game-description .banner::after {
   content: "";
   display: block;
   background: linear-gradient(180deg, rgba(220, 220, 220, 0) 0%, rgba(220, 220, 220, 0.7) 79.5%, rgb(220, 220, 220) 100%);
@@ -89,21 +91,32 @@ body {
   height: 100%;
   position: absolute;
 }
-#games .container .game-description .banner .modal-close-button {
+#games .inner-container .game-description .banner .modal-close-button {
+  background: none;
+  border: none;
   position: absolute;
-  right: 7px;
-  top: 14px;
+  top: 0;
+  right: 0;
   z-index: 98;
+  padding-top: 20px;
+  padding-right: 24px;
+  cursor: pointer;
 }
-#games .container .game-description .text {
+#games .inner-container .game-description .banner .modal-close-button svg {
+  fill: #bfbebe;
+  width: 26px;
+  height: 26px;
+  pointer-events: none !important;
+}
+#games .inner-container .game-description .text {
   padding: 56px;
 }
-#games .container .game-description .text p {
+#games .inner-container .game-description .text p {
   margin: 0;
   color: #22272E;
 }
 
-#about .container {
+#about .inner-container {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -111,53 +124,30 @@ body {
   padding: 18px 56px 8px;
 }
 @media (min-width: 768px) {
-  #about .container {
+  #about .inner-container {
     padding-right: 25%;
   }
 }
-#about .container h1, #about .container p {
+#about .inner-container h1, #about .inner-container p {
   margin: 0;
 }
-#about .container h1 + p {
+#about .inner-container h1 {
+  font-size: 24px;
+}
+#about .inner-container h1 + p {
   font-weight: 300;
   margin-bottom: 32px;
 }
 
-footer .container {
+footer .inner-container {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   column-gap: 18px;
   padding: 8px 56px 18px;
 }
-footer .container a {
+footer .inner-container a {
   display: flex;
-}
-
-.modal {
-  position: absolute;
-  width: 100%;
-  min-height: 100vh;
-  padding: 28px;
-  background-color: rgba(0, 0, 0, 0.75);
-  z-index: 10;
-}
-.modal.closed {
-  display: none;
-}
-.modal.open {
-  display: block;
-}
-.modal-close-button {
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-.modal-close-button svg {
-  width: 40px;
-  height: 40px;
-  fill: #000;
-  opacity: 0.65;
 }
 
 @keyframes fadeInUp {
