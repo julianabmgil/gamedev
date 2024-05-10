@@ -60,16 +60,16 @@ body .gradient-overlay {
 @media (min-width: 576px) {
   #games .inner-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 26.25vw;
-    max-height: 422px;
+    grid-template-columns: repeat(3, 1fr);
+    height: 26.33vw;
+    max-height: 507px;
   }
 }
-@media (max-width: 767.98px) {
+/* @media (max-width: 767.98px) {
   #games .inner-container {
     min-height: 200px;
   }
-}
+} */
 #games .inner-container .game {
   display: block;
   width: 100%;
@@ -151,7 +151,13 @@ body .gradient-overlay {
     padding-inline: 42px;
   }
 }
-
+/*#about {
+  margin-right: 56px;
+  background-image: url('/images/new-projects-coming-soon.png');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 30%;
+}*/
 #about .inner-container {
   height: 100%;
   display: flex;
